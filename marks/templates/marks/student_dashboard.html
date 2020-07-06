@@ -1,0 +1,11 @@
+{% extends "marks/base_generic.html" %}
+
+{% block content %}
+<h1>Welcome</h1>
+<h2>{{student.first_name}} {{student.last_name}}</h2>
+<ul>
+{% for mark in marks %}
+    <li>{{ mark.created_date}}: {{ mark }}</li>
+{% endfor %}
+</ul>
+{% endblock %}

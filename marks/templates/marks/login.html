@@ -1,0 +1,20 @@
+{% extends "marks/base_generic.html" %}
+
+{% block content %}
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <td>{{ form.username }}</td>
+<!--        <td>{{ form.username.label_tag }}</td>-->
+        <br>
+        <td>{{ form.password }}</td>
+<!--        <td>{{ form.password.label_tag }}</td>-->
+        <br>
+        <input type="submit" name = "login" value="login"/>
+        <input type="hidden" name="next" value="{% url 'home' %}" />
+    </form>
+    {% if form.errors %}
+    <div class="error">
+        Invalid login or password
+    </div>
+    {% endif %}
+{% endblock %}

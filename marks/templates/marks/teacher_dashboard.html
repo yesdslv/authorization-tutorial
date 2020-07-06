@@ -1,0 +1,9 @@
+{% extends "marks/base_generic.html" %}
+
+{% block content %}
+<ul>
+{% for mark in marks %}
+    <li>{{ mark.student.first_name }} {{ mark.student.last_name }}: {{ mark }}</li>
+{% endfor %}
+</ul>
+{% endblock %}
